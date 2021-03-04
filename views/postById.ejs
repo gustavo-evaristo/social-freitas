@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grupo Freitas</title>
+    <link rel="stylesheet" href="/css/postById.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/e63f6a9c54.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main class="container">
+      <section class="photoComent">
+        <a class="close" href="/">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            width="26"
+            height="26"
+            viewBox="0 0 172 172"
+            style="fill: #000000"
+          >
+            <g
+              fill="none"
+              fill-rule="nonzero"
+              stroke="none"
+              stroke-width="1"
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-miterlimit="10"
+              stroke-dasharray=""
+              stroke-dashoffset="0"
+              font-family="none"
+              font-weight="none"
+              font-size="none"
+              text-anchor="none"
+              style="mix-blend-mode: normal"
+            >
+              <path d="M0,172v-172h172v172z" fill="none"></path>
+              <g fill="#ffffff">
+                <path
+                  d="M44.03365,26.46154c-1.91226,0 -3.64363,0.7494 -4.96154,2.06731l-10.54327,10.54327c-2.63581,2.63582 -2.63581,7.23558 0,10.54327l36.38462,36.38462l-36.38462,36.38462c-2.63581,3.30769 -2.63581,7.90746 0,10.54327l10.54327,10.54327c3.30769,2.63582 7.90746,2.63582 10.54327,0l36.38462,-36.38462l36.38462,36.38462c3.30769,2.63582 7.90746,2.63582 10.54327,0l10.54327,-10.54327c2.63582,-3.30769 2.63582,-7.90745 0,-10.54327l-36.38462,-36.38462l36.38462,-36.38462c2.63582,-3.30769 2.63582,-7.90745 0,-10.54327l-10.54327,-10.54327c-3.30769,-2.63581 -7.90745,-2.63581 -10.54327,0l-36.38462,36.38462l-36.38462,-36.38462c-1.65385,-1.31791 -3.66947,-2.06731 -5.58173,-2.06731z"
+                ></path>
+              </g>
+            </g>
+          </svg>
+        </a>
+
+        <div class="photoArea">
+          <div class="photo">
+            <% if(postById.image.substr(-1)=='4' ||
+            postById.image.substr(-1)=='I' ){ %>
+            <video src="/uploads/<%-postById.image%>" controls></video>
+            <% } else { %>
+            <img src="/uploads/<%-postById.image%>" alt="" />
+            <% } %>
+          </div>
+        </div>
+      </section>
+      <aside class="comentArea">
+        <div class="headerComent">
+          <% if (postById.user.genre == 'masc') { %>
+          <div class="avatar">
+            <img src="/uploads/iconmaleProfile.svg" alt="" />
+          </div>
+          <% } %> <% if (postById.user.genre == 'fem') { %>
+          <div class="avatar">
+            <img src="/uploads/iconfemaleProfile.svg" alt="" />
+          </div>
+          <% } %>
+          <div class="info">
+            <h2><%-postById.user.name%><span> - 12h </span></h2>
+            <h5><%-postById.user.login%></h5>
+          </div>
+        </div>
+        <div class="soDesc">
+          <p><%-postById.description%></p>
+        </div>
+        <div class="allComents">
+          <% comments.forEach( comment => { %>
+          <div class="infoComent">
+            <% if (comment.user.genre == 'masc') { %>
+            <div class="avatar2">
+              <img src="/uploads/iconmaleProfile.svg" alt="" />
+            </div>
+            <% } %> <% if (comment.user.genre == 'fem') { %>
+            <div class="avatar2">
+              <img src="/uploads/iconfemaleProfile.svg" alt="" />
+            </div>
+            <% } %>
+
+            <div class="coment">
+              <div class="userLogin">
+                <p>@<%-comment.user.login%></p>
+              </div>
+              <div class="userComent">
+                <p><%-comment.description%></p>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+        <form class="comentEnter" action="/comentario" method="POST">
+          <div class="textareaComent">
+            <textarea
+              name="description"
+              id="comenttext"
+              placeholder="Adicione um comentário..."
+            ></textarea>
+            <input type="hidden" name="id_post" value="<%-postById.id%>" />
+          </div>
+          <div class="buttonComent">
+            <button><i class="fas fa-paper-plane" id="iconSubmit"></i></button>
+          </div>
+        </form>
+      </aside>
+    </main>
+  </body>
+</html>

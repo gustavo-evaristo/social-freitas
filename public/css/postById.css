@@ -1,0 +1,408 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: #192734;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+}
+
+.photoComent {
+  width: 70%;
+  height: 100%;
+  background: #15202b;
+  display: flex;
+  flex-direction: column;
+}
+
+.comentArea {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+}
+
+
+#comenttext{
+  width: 100%;
+  margin-top:5px
+}
+.close {
+  width: 3vw;
+  height: 7vh;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  border-radius: 2rem;
+  justify-content: center;
+
+  margin-top: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+
+
+.close:hover {
+  background: #2e2e2e;
+}
+
+.photoArea {
+  width: 100%;
+  height: 100%;
+  background: #15202b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo {
+  width: 40rem;
+  height: 35rem;
+  margin-top: -2rem;
+}
+
+.photo img, .photo video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.headerComent {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  background: #192734;
+  flex-direction: row;
+}
+
+.allComents {
+  width: 100%;
+  height: 59%;
+  margin-top: 20px;
+  /* border-top: 0.5px solid #38444D; */
+  overflow: auto;
+}
+
+.comentEnter {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar img {
+  width: 65%
+} 
+
+.avatar2 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: 10%;
+  margin: 0 10px;
+}
+
+.avatar2 img {
+  width: 100%;
+}
+
+.info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.info h2 {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.info h2 span {
+  font-weight: 200;
+  font-size: 0.8rem;
+}
+
+.info h5 {
+  color: white;
+  font-weight: 200;
+}
+
+.soDesc {
+  width: 95%;
+  min-height: 30px;
+  max-height: 100px;
+  overflow: auto;
+  background-color: #192734;
+  justify-content: center;
+  padding-left: 1rem;
+  align-items: center;
+  word-wrap: break-word;
+}
+
+.soDesc p {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 300;
+  text-align: justify;
+}
+
+.soDesc::placeholder {
+  padding: 13px;
+}
+
+.soDesc::-webkit-scrollbar-track {
+  background-color: #192734;
+}
+.soDesc::-webkit-scrollbar {
+  width: 6px;
+  background: #192734;
+}
+.soDesc::-webkit-scrollbar-thumb {
+  background: #192734;
+}
+
+.infoComent {
+  width: 100%;
+  margin-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  min-height: 60px;
+}
+
+.coment {
+  width: 80%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+
+  background: #15202b;
+  border-radius: 0 0.2rem 0.2rem 1.3rem;
+  /* border-radius: 2rem; */
+}
+
+.avatarComent {
+  width: 20%;
+}
+
+.userLogin {
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.userComent {
+  width: 100%;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  white-space: normal;
+}
+.userComent::placeholder {
+  padding: 10px;
+}
+
+.userComent::-webkit-scrollbar-track {
+  background-color: #192734;
+}
+.userComent::-webkit-scrollbar {
+  width: 6px;
+  background: #192734;
+}
+.userComent::-webkit-scrollbar-thumb {
+  background: #192734;
+}
+
+.userComent p {
+  width: 98%;
+  word-wrap: break-word;
+}
+
+.allComents::placeholder {
+  padding: 10px;
+}
+
+.allComents::-webkit-scrollbar-track {
+  background-color: #192734;
+}
+.allComents::-webkit-scrollbar {
+  width: 4px;
+  background: #192734;
+}
+.allComents::-webkit-scrollbar-thumb {
+  background: #1da1f2;
+}
+
+.textComent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.textareaComent {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 0.6rem;
+}
+
+.textareaComent textarea {
+  font-weight: 400;
+  height: 60%;
+  color: white;
+  width: 100%;
+  background: #15202b;
+  border: none;
+  resize: none;
+  overflow: auto;
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 1rem;
+}
+
+.textareaComent textarea::placeholder {
+  padding-top: 3px;
+}
+
+.textareaComent textarea::-webkit-scrollbar-track {
+  background-color: #192734;
+}
+.textareaComent textarea::-webkit-scrollbar {
+  width: 6px;
+  background: #192734;
+}
+.textareaComent textarea::-webkit-scrollbar-thumb {
+  background: #192734;
+}
+
+.buttonComent {
+  width: 15%;
+  height: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonComent button {
+  width: 100%;
+  height: 60%;
+  border: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-weight: 400;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+  .info h2 {
+    font-size: 1rem;
+  }
+  .textareaComent {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    margin-top: 0.6rem;
+  }
+  .buttonComent {
+    width: 20%;
+    height: 75%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .close {
+    width: 5vw;
+    height: 7vh;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    border-radius: 1rem;
+    justify-content: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+}
+@media screen and (width: 800px) {
+  .info h2 {
+    font-size: 0.8rem;
+  }
+  .info h5 {
+    font-size: 0.6rem;
+  }
+  .photo img, .photo video {
+    width: 90%;
+    height: 90%;
+  }
+  .photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .close {
+    width: 5vw;
+  }
+  .textareaComent {
+    margin-top: -6px;
+  }
+ 
+  .textareaComent textarea {
+    font-weight: 400;
+    height: 50%;
+    color: white;
+    width: 100%;
+    background: #15202b;
+    border: none;
+    resize: none;
+    overflow: auto;
+    margin-left: 10px;
+    padding: 1px;
+  }
+  .buttonComent {
+    width: 20%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+#iconSubmit{
+  font-size:1.2rem;
+}
+
+#iconSubmit:hover{
+  color: #1da1f2;
+  transition: 0.4s;
+}

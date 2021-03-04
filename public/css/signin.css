@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #131c25;
+    display: flex;
+    align-items: center;
+}
+
+main {
+    width: 95%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    box-shadow: 0 0 40px rgb(0, 0, 0);
+    
+}
+.login-top span{
+    font-weight: 200;
+}
+
+.box-text {
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/register.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #131c25;
+}
+
+.box-text .box-text-items{
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+}
+
+.text-items{
+    display: flex;
+    align-items: center;
+    padding-bottom:20px;
+}
+
+.box-text .text-items p{
+    font-size: 19px;
+    font-weight: 500;
+    margin-left: 15px;
+    cursor: default;
+    color: white;
+}
+
+.box-text .text-items img{
+    width: 50px;
+}
+
+.box-login {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(231, 231, 231);
+    background-color: #131c25;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-text-login {
+    width: 70%;
+}
+
+.box-login .login-top{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-text-login form{
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+}
+
+.box-text-login h2 {
+    font-size: 34px;
+    color: white;
+    text-align: CENTER;
+}
+
+.box-text-login span#text {
+    color:  white;
+}
+
+.box-text-login span.validation{
+    display: none;
+    color: #ce1111;
+}
+
+.box-text-login form > input, .box-text-login form > select {
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    font-size: 17px;
+    color: #b8b8b8;
+    background-color: #131c25;
+    border: 2px solid #616161;
+}
+
+.box-text-login form input::placeholder {
+    font-size: 17px;
+    color: rgb(121, 121, 121);
+}
+
+#button {
+    background-color: #05cc5f00;
+    border: 2px solid  white;
+    color:  white;
+    cursor: pointer;
+}
+
+#button:hover{
+    background-color:  white;
+    color: #212426;
+    transition: 0.6s;
+}
+
+.box-text-login form > input:focus {
+    border: 2px solid  white;
+    transition: 0.3s;
+}
+
+/* Cor de fundo do autocomplete */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px  #262726 inset;
+}
+
+/* Cor do texto do autocomplete */
+input:-webkit-autofill {
+    -webkit-text-fill-color: rgb(184,184,184) !important;
+}

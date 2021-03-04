@@ -1,0 +1,224 @@
+/* Dashboard */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", "sans-serif";
+    outline: 0;
+}
+
+html {
+    background-color: #15202B;
+}
+
+.container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #15202B;
+    display: flex;
+    flex-direction: column;
+
+}
+
+html::-webkit-scrollbar-track {
+    background-color: #15202B;
+}
+html::-webkit-scrollbar {
+    width: 6px;
+    background: #15202B;
+}
+html::-webkit-scrollbar-thumb {
+    background:#1D99E6;
+}
+
+.central {
+    left: 27%;
+    position: absolute;
+    width: 40%;
+    background-color: #15202B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.5px solid #38444D;
+    border-top: 0;
+    border-bottom: 0;
+}
+
+.resume {
+    right:1%;
+    position: fixed;
+    width: 30%;
+    height: 100%;
+    background-color: #15202B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar {
+    position: fixed;
+    width: 30%;
+    height: 100%;
+    background-color: #15202B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.itens {
+    width: 60%;
+    align-items: left;
+    color: white;
+    font-size: 20px;
+}
+.i-navbar.logo{
+    padding-top: 30px;
+    cursor: default;
+}
+
+.i-navbar.logo:first-child{
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+.i-navbar.logo span{
+    font-weight: 200;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+}
+
+.i-navbar a{
+    text-decoration: none;
+    color: white;
+    font-weight: 200;
+    padding-left: 7px;
+}
+
+.i-navbar img{
+    width: 60%;
+}
+
+.button-logout button, button.button-disable {
+    width: 90%;
+    border-radius: 1rem;
+    border: 0;
+    height: 48px;
+    background: #1DA1F2;
+    color: white;
+    font-weight: 200;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button.button-disable {
+    cursor: not-allowed;
+}
+
+.button-logout button:hover {
+    background: #1D99E6;
+}
+
+.button-logout {
+   width: 100%;
+}
+
+.back-iten{
+    margin: 10px 0;
+    width: 80%;
+    background-color:  #15202B;
+    border-radius: 2rem;
+    padding: 7px;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.back-iten:hover, .profile:hover{
+    background: #162C3E;
+    transition: 0.3s;
+}
+
+.back-iten .blue {
+    color:#49b9ff;
+}
+
+.profile {
+    width: 60%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-left: -10%;
+    cursor: default;
+}
+
+.profile .icon-profile {
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    margin-right: 5px;
+    color: white;
+}
+
+.profile .info-profile {
+    width: 65%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile .tittle-profile{
+    width: 100%;
+}
+
+.profile .tittle-profile p{
+    font-size: 17px;
+    color: white;
+    font-weight: 300;
+}
+
+.profile .tittle-profile h3{
+    font-size: 13px;
+    color: white;
+    font-weight: 300;
+}
+
+
+@media screen and (max-width: 800px){
+    .profile .tittle-profile p{
+        font-size: 10px;
+    }
+    
+    .profile .tittle-profile h3{
+        font-size: 9px;
+
+    }
+    
+    .button-logout button{
+        width: 90%;
+        height: 40%;
+    }
+
+    .i-navbar a {
+        font-size: 1rem;
+    }
+
+    .button-logout button{
+        font-size: 0.9rem;
+    }
+
+    .i-navbar.logo{
+        font-size: 1.1rem;
+    }
+
+    .button-logout button{
+        padding: 5px 0;
+    }
+}

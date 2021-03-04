@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuários</title>
+    <script src="https://kit.fontawesome.com/e63f6a9c54.js" crossorigin="anonymous"></script>
+    <script src="/js/hoverEffect.js" defer></script>
+    <script src="/js/buttonSwitch.js" defer></script>
+    <script src="/js/buttonPost.js" defer></script>
+    <script src="/js/showPassword.js" defer></script>
+    <script src="/js/closePopup.js" defer></script>
+    <script src="/js/imagesBg.js" defer></script>
+    <script src="/js/uploadImage.js" defer></script>
+    <script src="/js/popUp.js" defer></script>
+    <link rel="stylesheet" href="/css/users.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/resume.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="/css/button.css">
+    <link rel="stylesheet" href="/css/upload.css">
+    <link rel="stylesheet" href="/css/popup.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,700;1,100;1,200;1,400;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- ? popup Post -->
+    <!-- ? popup Post -->
+    <div class="popup-post">
+        <div class="pop-post">
+            <div class="header-edit-photo">
+                <div><a href="profile.html" class="close"><i class="fas fa-times"></i></a></div>
+                <div>
+                    <p>Criar Nova Postagem</p>
+                </div>
+            </div>
+            <form class="desc" action="/post-create" method="POST" enctype="multipart/form-data">
+                <div class="campOne">
+                    <div class="textareaComent">
+                        <label for="textcoment">Deixe seu comentário aqui:</label>
+                        <textarea name="description" id="textcoment" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="buttonsPop">
+                        <div class="button-pub">
+                            <div>
+                                <p>Privado</p>
+                            </div>
+                            <div>
+                                <label class="switch">
+                                    <input id="button-switch" type="checkbox" name="privacy" value="0">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div>
+                                <p>Público</p>
+                            </div>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+                <div class="campTwo">
+                    <label for=""></label>
+                    <div class="upload">
+                        <script class="jsbin"
+                            src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+                        <div class="file-upload">
+                            <div class="image-upload-wrap">
+                                <input class="file-upload-input" type='file' name="image" onchange="readURL(this);"
+                                    accept="image/*" />
+                                <div class="drag-text">
+                                    <h3>Clique ou arraste o arquivo desejado.</h3>
+                                </div>
+                            </div>
+                            <div class="file-upload-content">
+                                <img class="file-upload-image" src="#" alt="your image" />
+                                <div class="image-title-wrap">
+                                    <button type="button" onclick="removeUpload()" class="remove-image">Remover <span
+                                            class="image-title">Uploaded Image</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buttonUpload">
+                        <button type="submit">Salvar</button>
+                    </div>
+            </form>
+        </div>
+
+    </div>
+    </div>
+    <!-- !------------------------------------------ -->
+    <main class="container">
+        <div class="navbar">
+            <div class="itens">
+                <div class="i-navbar logo">
+                    <i class="fas fa-rocket">
+                        <p>Grupo<span>Freitas</span></p>
+                    </i>
+                </div>
+                <div class="i-navbar" id="i-color">
+                    <div class="back-iten">
+                        <i class="fas fa-home"></i>
+                        <a href="/">Início</a>
+                    </div>
+                </div>
+                <div class="i-navbar">
+                    <div class="back-iten">
+                        <i class="fas fa-search"></i>
+                        <a href="/explorar">Explorar</a>
+                    </div>
+                </div>
+                <div class="i-navbar">
+                    <div class="back-iten">
+                        <i class="far fa-bookmark"></i>
+                        <a href="/favoritos">Favoritos</a>
+                    </div>
+                </div>
+                <div class="i-navbar">
+                    <div class="back-iten">
+                        <i class="far fa-user"></i>
+                        <a href="/perfil">Perfil</a>
+                    </div>
+                </div>
+                <div class="i-navbar">
+                    <div class="back-iten">
+                        <i class="far fa-address-book"></i>
+                        <a href="/usuarios">Usuários</a>
+                    </div>
+                </div>
+                <div class="i-navbar">
+                    <div class="back-iten">
+                        <i class="fas fa-power-off"></i>
+                        <a href="/sair">Sair</a>
+                    </div>
+                </div>
+                
+                <% if(User.privilege=='admin' ){ %>
+                    <div class="button-logout i-navbar">
+                        <button class="button-post">
+                            <i class="fas fa-plus"></i>
+                            Nova Postagem
+                        </button>
+                    </div>
+                    <% } %>
+                        <% if(User.privilege=='user' ) { %>
+                            <div>
+                                <button class="button-disable">
+                                    <i class="fas fa-plus"></i>
+                                    Nova Postagem
+                                </button>
+                            </div>
+                            <% } %>
+
+            </div>
+            <div class="profile">
+                <div class="icon-profile">
+                    <% if(User.genre==='masc' ) { %>
+                        <img src="/uploads/iconmaleProfile.svg" class="photoPost"></i>
+                        <% } else { %>
+                            <img src="/uploads/iconfemaleProfile.svg" class="photoPost"></i>
+                            <% } %>
+                </div>
+                <div class="info-profile">
+                    <div class="tittle-profile">
+                        <p>
+                            <%-User.name%>
+                        </p>
+                    </div>
+                    <div class="tittle-profile">
+                        <h3>@<%-User.login%>
+                                </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- main info-->
+        <div class="central">
+            <!-- main title-->
+            <div class="main-tittle">
+                <div>
+                    <p>Usuários</p>
+                </div>
+            </div>
+            <!-- main content-->
+            <div class="main-content">
+                <% user.forEach(user=> { %>
+
+                    <div class="users">
+                        <div class="users-photo">
+                            <% if(user.genre==='masc' ) { %>
+                                <img src="/uploads/iconmaleProfile.svg" class="photoPost" style="width: 70%;"></i>
+                                <% } else { %>
+                                    <img src="/uploads/iconfemaleProfile.svg" class="photoPost" style="width: 70%;"></i>
+                                    <% } %>
+                        </div>
+                        <div class="users-info">
+                            <div class="users-names">
+                                <p>
+                                    <%-user.name%>
+                                </p>
+                            </div>
+                            <div class="users-na">
+                                </p>@<%-user.login%>
+                                    </p>
+                            </div>
+                        </div>
+
+                        <% if(user.privilege==='user' ) { %>
+
+                            <div class="users-button">
+
+                            </div>
+
+                            <% }%>
+
+                                <% if(user.privilege==='admin' ) { %>
+
+                                    <div class="users-button">
+                                        <button class="button-user"><a href="/perfil/<%-user.login%>">Acessar
+                                                Perfil</a></button>
+                                    </div>
+
+                                    <% }%>
+                    </div>
+
+                    <% }) %>
+            </div>
+            <!-- resume info-->
+            <!-- <div class="resume">
+                <div class="resume-container">
+                     <div class="resume-title">
+                        <p>Perfis Relacionados</p>
+                    </div>
+                    <div class="resume-post">
+                        <div class="resume-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="resume-profile">
+                            <div class="tittle-profile">
+                                <p>EduardoZuppo</p>
+                            </div>
+                            <div class="tittle-profile">
+                                <h3>@ezuppo</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resume-post">
+                        <div class="resume-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="resume-profile">
+                            <div class="tittle-profile">
+                                <p>GustavoEvaristo</p>
+                            </div>
+                            <div class="tittle-profile">
+                                <h3>@guevaristo</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resume-post">
+                        <div class="resume-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="resume-profile">
+                            <div class="tittle-profile">
+                                <p>CleitonRasta</p>
+                            </div>
+                            <div class="tittle-profile">
+                                <h3>@cleitinho</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resume-post">
+                        <div class="resume-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="resume-profile">
+                            <div class="tittle-profile">
+                                <p>VanessaDaMata</p>
+                            </div>
+                            <div class="tittle-profile">
+                                <h3>@vanessamata</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="more-info">
+                        <div>
+                                                   <button class="more-button">
+                                <a href="/usuarios" style="color: #fff; text-decoration: none;"><p>Mostrar mais</p></a>
+                            </button>
+                        </div>
+                    </div> 
+                </div>
+                <div class="resume-footer">
+                    <div>
+                        <img src="/images/LOGO_GF.png" alt="" class="img-footer">
+                    </div>
+                    <div class="footer-content">
+                        <p>Termos de Serviço</p>
+                        <p>Politica de Privacidade</p>
+                        <p>© 2021 GrupoFreitas.</p>
+                    </div>
+                </div>-->
+        </div>
+    </main>
+</body>
+
+</html>

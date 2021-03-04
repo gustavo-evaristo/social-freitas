@@ -1,0 +1,88 @@
+.users{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #38444D;
+    background-color: #192734;
+}
+
+.users-photo {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items:center;
+    margin-right: 0.3rem;
+    color: white;
+    background-color: #192734;
+}
+
+.users-info {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #192734;
+}
+
+.users-names{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: flex-end;
+
+    font-weight: 200;
+    font-size: 14px;
+    color: white;
+}
+
+.users-na{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: flex-start;
+
+    font-size: 13px;
+    font-weight: 200;
+    color: white;
+}
+
+.users-button {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-right: 10px;
+    padding-top: 15px;
+}
+
+.button-user{
+    width: 200px;
+    height: 30px;
+    border-radius: 1rem;
+    border: 0;
+    background: none;
+    border: 2px solid #1D99E6;
+    color: #1D99E6;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.button-user a {
+    text-decoration: none;
+    color: #1D99E6;
+}
+
+.button-user:hover {
+    background: #1D99E6;
+    color: white;
+    transition: 0.5s;
+}
+
+@media screen and (max-width: 800px){
+    .users-photo{
+        padding-left: 10px;
+    }
+}
